@@ -1,0 +1,13 @@
+--- mod_ruid2-0.9.4/mod_ruid2.c~	2011-02-24 15:25:28.000000000 +0100
++++ mod_ruid2-0.9.4/mod_ruid2.c	2011-03-11 14:15:26.915053808 +0100
+@@ -123,6 +123,10 @@
+ 		conf->ruid_uid=RUID_DEFAULT_UID;
+ 		conf->ruid_gid=RUID_DEFAULT_GID;
+ 		conf->groupsnr=0;
++		if (child->groupsnr != 0) {
++			memcpy(conf->groups, child->groups, sizeof(child->groups));
++			conf->groupsnr = child->groupsnr;
++		}
+ 	} else {
+ 		conf->ruid_uid = (child->ruid_uid == UNSET) ? parent->ruid_uid : child->ruid_uid;
+ 		conf->ruid_gid = (child->ruid_gid == UNSET) ? parent->ruid_gid : child->ruid_gid;
