@@ -3,12 +3,12 @@
 Summary:	Apache module: run all httpd process under user's access right
 Summary(pl.UTF-8):	Moduł do apache: uruchamiania procesów httpd na prawach użytkowniów
 Name:		apache-mod_%{mod_name}
-Version:	0.9.6
+Version:	0.9.7
 Release:	1
 License:	ASL v2.0
 Group:		Networking/Daemons/HTTP
 Source0:	http://sourceforge.net/projects/mod-ruid/files/mod_ruid2/mod_%{mod_name}-%{version}.tar.bz2
-# Source0-md5:	147e1957f817070f7afc0158a5e5452f
+# Source0-md5:	4399b64c9bed45fc723271ed9eb506a8
 Source1:	mod_%{mod_name}.conf
 Patch0:		%{name}-stat-rgroups.patch
 URL:		http://mod-ruid.sourceforge.net/
